@@ -1,0 +1,94 @@
+@import "src/common/styles/sass/mixins";
+@import "src/common/styles/sass/variables";
+
+.container {
+  position: relative;
+  @include flex(row);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  margin-left: 145px;
+  @media screen and (max-width: 1576px){
+    justify-content: center;
+    margin-left: 0;
+  }
+  .logo{
+    width: 164px;
+    height: 130px;
+  }
+  .navbar{
+    cursor: pointer;
+    height: 36px;
+    @include flex(row);
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 98px;
+    margin-top: 30px;
+    gap:48px;
+    @media screen and (max-width: 1576px){
+      margin-left: 0;
+      margin-top: 20px;
+      gap:10px;
+    }
+    @media screen and (max-width: 782px){
+      margin-left: 0;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .navbarItem{
+      @include text(20px, 500, 30px, $textColor2);
+      padding: 0 20px 0;
+      border: none;
+      background: none;
+      &:hover{
+        cursor: pointer;
+        background: #FFFFFF;
+        box-shadow: inset -4px -4px 4px rgba(173, 173, 173, 0.25), inset 4px 4px 4px #CABDBD;
+        border-radius: 20px;
+        color:$textColor1;
+      }
+      &:focus{
+        background: #FFFFFF;
+        box-shadow: inset -4px -4px 4px rgba(173, 173, 173, 0.25), inset 4px 4px 4px #CABDBD;
+        border-radius: 20px;
+        color:$textColor1;
+      }
+    }
+  }
+  .login{
+    width: 112px;
+    height: 35px;
+    background: #E03FA9;
+    box-shadow: inset -4px -4px 4px rgba(255, 255, 255, 0.25), inset 4px 4px 4px #BA6B9F;
+    border-radius: 20px;
+    @include text(14px, 400, 20px, $textColor2);
+    margin-left: 106px;
+    margin-right: 169px;
+    margin-top: 40px;
+    cursor: pointer;
+    @media screen and (max-width: 1576px){
+      margin-left: 0;
+      margin-top: 22px;
+      margin-right: 0;
+    }
+    @media screen and (max-width: 613px){
+      margin-left: 0;
+      margin-top: 40px;
+      margin-right: 0;
+    }
+    &:hover{
+      opacity: 0.8;
+    }
+    &:active{
+      background-color: #BA6B9F;
+    }
+  }
+  .effects{
+    position: absolute;
+    top:8px;
+    right: -32px;
+    @media screen and (max-width: 1200px){
+      display: none;
+    }
+  }
+}

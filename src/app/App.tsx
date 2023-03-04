@@ -1,11 +1,11 @@
 import React from 'react'
-import './App.css'
+import s from './App.module.scss'
 import { Header } from './Header/Header'
 import { RoutesComponent } from './routes/RoutesComponent'
 
 function App() {
   return (
-    <div>
+    <div className={s.wrapper}>
       <Header />
       <RoutesComponent />
     </div>

@@ -1,14 +1,14 @@
 @import './variables';
 
-@mixin flex($direction, $justifyContent, $alignItems) {
+@mixin flex($direction) {
   display: flex;
   flex-direction: $direction;
 }
 
-@mixin text($fontSize, $fontWeight, $lineHeight) {
+@mixin text($fontSize, $fontWeight, $lineHeight, $color) {
   font-family: $primaryFontFamily;
   font-size: $fontSize;
   font-weight: $fontWeight;
   line-height: $lineHeight;
-  color: $textColor;
+  color: $color;
 }
