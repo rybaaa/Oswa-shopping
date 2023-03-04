@@ -2,6 +2,7 @@
 @import "src/common/styles/sass/variables";
 
 .wrapper {
+  position: relative;
   .input{
     @include flex(row);
     justify-content: center;
@@ -20,11 +21,123 @@
       border-radius: 16px 0;
       padding: 0 0 0 75px;
       outline: none;
+      @include text(16px, 400, 24px, #767676);
     }
     .zoom{
       position: absolute;
       top:12px;
       left: 37px;
     }
+  }
+  .mainBlock{
+    margin: 50px auto 110px;
+    @include flex(row);
+    justify-content: center;
+    gap:80px;
+    flex-wrap: wrap;
+    .mainLeft{
+      @media screen and (max-width: 1205px){
+        @include flex(column);
+        align-items: center;
+        text-align: center;
+      }
+      .title{
+        width: 534px;
+        @include text(48px, 400, 85px, $textColor2);
+        font-family: 'Poller One', sans-serif;
+        @media screen and (max-width: 550px){
+          width: 300px;
+          @include text(40px, 400, 50px, $textColor2);
+          font-family: 'Poller One', sans-serif;
+        }
+      }
+      .description{
+        margin-top: 20px;
+        width: 388px;
+        @include text(16px, 400, 24px, $textColor2);
+        @media screen and (max-width: 550px){
+          width: 300px;
+        }
+      }
+      .btn{
+        width: 275px;
+        height: 63px;
+        background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 65px;
+        @include text(22px, 500, 24px, $textColor2);
+        &:hover{
+          opacity: 0.8;
+        }
+        &:active{
+          background-color: #FA90D6;
+        }
+      }
+    }
+    .mainRight{
+      position: relative;
+      img{
+        @media screen and (max-width: 620px){
+          width: 300px;
+        }
+      }
+      .effect{
+        position: absolute;
+        top:60px;
+        left: -48px;
+        @media screen and (max-width: 620px){
+          display: none;
+        }
+      }
+      .effect2{
+        position: absolute;
+        top:-39px;
+        right: -24px;
+        @media screen and (max-width: 620px){
+          display: none;
+        }
+      }
+      .effect3{
+        position: absolute;
+        bottom:115px;
+        left: -85px;
+        @media screen and (max-width: 620px){
+          display: none;
+        }
+      }
+      .effect4{
+        position: absolute;
+        bottom:-37px;
+        right: 0;
+        @media screen and (max-width: 620px){
+          display: none;
+        }
+      }
+    }
+  }
+  .leftEffects{
+    position: absolute;
+    top:0;
+    @media screen and (max-width: 1450px){
+      display: none;
+    }
+  }
+  .rightEffects{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    @media screen and (max-width: 620px){
+      display: none;
+    }
+  }
+  .curlyLine{
+    position: absolute;
+    bottom: -82px;
+    left: calc(50% - 500px);
+    right: 0;
   }
 }
