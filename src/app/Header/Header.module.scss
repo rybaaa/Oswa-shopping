@@ -4,11 +4,11 @@
 .container {
   position: relative;
   @include flex(row);
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   padding-top: 18px;
   margin-left: 145px;
-  @media screen and (max-width: 1576px){
+  @media screen and (max-width: 1200px){
     justify-content: center;
     margin-left: 0;
   }
@@ -66,6 +66,7 @@
     margin-right: 169px;
     margin-top: 40px;
     cursor: pointer;
+    border: none;
     @media screen and (max-width: 1576px){
       margin-left: 0;
       margin-top: 22px;
@@ -87,7 +88,7 @@
     position: absolute;
     top:8px;
     right: -32px;
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1576px){
       display: none;
     }
   }

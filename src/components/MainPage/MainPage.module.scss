@@ -1,3 +1,30 @@
-.wrapper {
+@import "src/common/styles/sass/mixins";
+@import "src/common/styles/sass/variables";
 
+.wrapper {
+  .input{
+    @include flex(row);
+    justify-content: center;
+    position: relative;
+    width: 677px;
+    height: 53px;
+    margin: 0 auto;
+    @media screen and (max-width: 700px){
+      width: 300px;
+    }
+    .search{
+      width: 100%;
+      background: #EA85C7;
+      border: none;
+      box-shadow: inset 4px 4px 4px #BB699E, inset -4px -4px 4px rgba(255, 255, 255, 0.25);
+      border-radius: 16px 0;
+      padding: 0 0 0 75px;
+      outline: none;
+    }
+    .zoom{
+      position: absolute;
+      top:12px;
+      left: 37px;
+    }
+  }
 }
