@@ -1,0 +1,7 @@
+@import "../../styles/sass/mixins";
+@import "../../styles/sass/variables";
+
+.title{
+  @include text(68px, 900, 88px);
+  font-family: 'Frank Ruhl Libre', sans-serif;
+}

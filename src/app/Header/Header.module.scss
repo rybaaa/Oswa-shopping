@@ -2,15 +2,17 @@
 @import "src/common/styles/sass/variables";
 
 .container {
+  //background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
   position: relative;
+  margin-bottom: 30px;
   @include flex(row);
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding-top: 18px;
-  margin-left: 145px;
+  padding-left: 145px;
   @media screen and (max-width: 1200px){
     justify-content: center;
-    margin-left: 0;
+    padding-left: 0;
   }
   .logo{
     width: 164px;

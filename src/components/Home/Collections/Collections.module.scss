@@ -1,0 +1,41 @@
+@import "../../../common/styles/sass/mixins";
+@import "../../../common/styles/sass/variables";
+
+.container{
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .title{
+    margin-top: 64px;
+    text-align: center;
+  }
+  .description{
+    @include text(20px, 400, 24px, $textColor1);
+    font-family: 'Lato', sans-serif;
+    margin-top: 21px;
+    text-align: center;
+  }
+  .leftEffects{
+    position: absolute;
+    top:400px;
+    left: -33px;
+    img{
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(47deg) brightness(104%) contrast(101%);
+    }
+    @media screen and (max-width: 1370px) {
+      display: none;
+    }
+  }
+  .rightEffects{
+    position: absolute;
+    top:468px;
+    right: -23px;
+    img{
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(47deg) brightness(104%) contrast(101%);
+    }
+    @media screen and (max-width: 1370px) {
+      display: none;
+    }
+  }
+}

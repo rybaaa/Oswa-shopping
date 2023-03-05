@@ -5,7 +5,7 @@
   flex-direction: $direction;
 }
 
-@mixin text($fontSize, $fontWeight, $lineHeight, $color) {
+@mixin text($fontSize, $fontWeight, $lineHeight, $color:$textColor1) {
   font-family: $primaryFontFamily;
   font-size: $fontSize;
   font-weight: $fontWeight;

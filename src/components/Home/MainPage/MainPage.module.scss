@@ -1,7 +1,8 @@
-@import "src/common/styles/sass/mixins";
-@import "src/common/styles/sass/variables";
+@import "../../../common/styles/sass/mixins";
+@import "../../../common/styles/sass/variables";
 
 .wrapper {
+  background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
   position: relative;
   .input{
     @include flex(row);
@@ -30,7 +31,7 @@
     }
   }
   .mainBlock{
-    margin: 50px auto 110px;
+    margin: 50px auto 0;
     @include flex(row);
     justify-content: center;
     gap:80px;
@@ -80,6 +81,7 @@
     }
     .mainRight{
       position: relative;
+      padding-bottom: 110px;
       img{
         @media screen and (max-width: 620px){
           width: 300px;
@@ -103,7 +105,7 @@
       }
       .effect3{
         position: absolute;
-        bottom:115px;
+        top:366px;
         left: -85px;
         @media screen and (max-width: 620px){
           display: none;
@@ -111,7 +113,7 @@
       }
       .effect4{
         position: absolute;
-        bottom:-37px;
+        bottom:73px;
         right: 0;
         @media screen and (max-width: 620px){
           display: none;
@@ -121,22 +123,22 @@
   }
   .leftEffects{
     position: absolute;
-    top:0;
+    top:148px;
     @media screen and (max-width: 1450px){
       display: none;
     }
   }
   .rightEffects{
     position: absolute;
-    bottom:0;
+    top:490px;
     right: 0;
-    @media screen and (max-width: 620px){
+    @media screen and (max-width: 1205px){
       display: none;
     }
   }
   .curlyLine{
     position: absolute;
-    bottom: -82px;
+    bottom: 30px;
     left: calc(50% - 500px);
     right: 0;
   }

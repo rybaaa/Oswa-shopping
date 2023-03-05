@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../MainPage/MainPage.module.scss'
+import s from './MainPage.module.scss'
 import zoom from 'assets/zoom.svg'
 import pic from 'assets/pic.svg'
 import squares from 'assets/squares.svg'
@@ -8,10 +8,12 @@ import arrows from 'assets/arrows.svg'
 import leftGroup from 'assets/groupLeft.png'
 import rightGroup from 'assets/groupRight.png'
 import curlyLine from 'assets/curlyLine.svg'
+import { Header } from '../../../app/Header/Header'
 
 export const MainPage = () => {
   return (
     <div className={s.wrapper}>
+      <Header />
       <div className={s.curlyLine}>
         <img src={curlyLine} alt={'curly line'} />
       </div>

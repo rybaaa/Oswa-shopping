@@ -1,0 +1,37 @@
+@import "../../../../common/styles/sass/mixins";
+@import "../../../../common/styles/sass/variables";
+
+.newCollectionBlock{
+  @include flex(row);
+  flex-wrap: wrap;
+  gap: 37px;
+  margin-top: 47px;
+  @media screen and (max-width: 1218px) {
+    justify-content: center;
+  }
+  .item{
+    position: relative;
+    &:hover{
+      opacity: 0.8;
+    }
+    .title{
+      position: absolute;
+      bottom: 14px;
+      left: 25px;
+      width: 327px;
+      height: 55px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      text-align: center;
+      @include flex(row);
+      justify-content: center;
+      align-items: center;
+      @include text(32px, 900, 41px, $textColor1);
+      font-family: 'Frank Ruhl Libre',sans-serif;
+      cursor: pointer;
+      &:hover{
+        background-color: #FA90D6;
+      }
+    }
+  }
+}
