@@ -1,0 +1,152 @@
+@import "src/common/styles/sass/mixins";
+@import "src/common/styles/sass/variables";
+
+.container {
+  min-height: 430px;
+  background: #FDFDFD;
+  box-shadow: inset -19px -19px 61px rgba(171, 89, 142, 0.28), inset 19px 19px 61px rgba(171, 89, 142, 0.6);
+  border-radius: 40% 40% 0 0;
+  @media screen and (max-width: 930px) {
+    border-radius: 0;
+  }
+
+  .footerBlock {
+    padding-bottom: 30px;
+    padding-top: 71px;
+    @include flex(row);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    @media screen and (max-width: 800px) {
+      padding-top: 20px;
+      gap: 20px;
+    }
+    @media screen and (max-width: 741px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .logoBlock {
+      width: 358px;
+      @include flex(column);
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 165px;
+        height: 165px;
+      }
+
+      .description {
+        @include text(20px, 500, 24px, $textColor1);
+        font-family: 'Lato', sans-serif;
+      }
+    }
+
+    .contactsBlock {
+      @include flex(column);
+      justify-content: flex-start;
+      width: 340px;
+
+      .title {
+        @include text(68px, 900, 88px, $textColor1);
+        font-family: 'Frank Ruhl Libre', sans-serif;
+        margin: 0;
+      }
+
+      .allContacts {
+        text-align: center;
+        width: 100%;
+        margin-top: 75px;
+        @media screen and (max-width: 741px) {
+          margin-top: 10px;
+        }
+
+        .contacts {
+          margin: 0;
+          @include text(20px, 500, 24px, $textColor1);
+          font-family: 'Lato', sans-serif;
+        }
+      }
+
+    }
+
+    .socialsBlock {
+      width: 430px;
+      @include flex(column);
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 500px) {
+        gap:20px;
+      }
+      .title {
+        @include text(68px, 900, 88px, $textColor1);
+        font-family: 'Frank Ruhl Libre', sans-serif;
+        margin: 0;
+      }
+
+      .socialsImgs {
+        @include flex(row);
+        justify-content: space-between;
+        gap: 93px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .form {
+        position: relative;
+        width: 100%;
+        @include flex(row);
+        @media screen and (max-width: 500px) {
+          justify-content: center;
+        }
+
+        .input {
+          width: 270px;
+          height: 66px;
+          background: #C2C2C2;
+          border-radius: 20px 0 0 20px;
+          border: none;
+          outline: none;
+          padding: 0 0 0 33px;
+          @include text(16px, 900, 21px, $textColor1);
+          font-family: 'Frank Ruhl Libre', sans-serif;
+          @media screen and (max-width: 500px) {
+            width: 150px;
+            height: 40px;
+          }
+        }
+
+        .btn {
+          width: 121px;
+          height: 66px;
+          background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
+          border-radius: 0 20px 20px 0;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          @include text(16px, 900, 21px, $textColor2);
+          font-family: 'Frank Ruhl Libre', sans-serif;
+          @media screen and (max-width: 500px) {
+            width: 100px;
+            height: 40px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .error {
+          position: absolute;
+          top: -30px;
+          left: calc(50% - 75px);
+          @include text(18px, 400, 24px, red);
+        }
+      }
+    }
+  }
+}
