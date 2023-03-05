@@ -3,6 +3,7 @@ import s from './Collections.module.scss'
 import squares from 'assets/squares2.svg'
 import { Title } from '../../../common/components/Title/Title'
 import { NewCollection } from './New Collection/NewCollection'
+import { BestSellsOld } from './BestSellsOld/BestSellsOld'
 
 export const Collections = () => {
   return (
@@ -21,6 +22,7 @@ export const Collections = () => {
         collections & lookbooks every week.
       </span>
       <NewCollection />
+      <BestSellsOld />
     </div>
   )
 }

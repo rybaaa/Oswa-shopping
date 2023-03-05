@@ -1,0 +1,170 @@
+@import "../../../../common/styles/sass/mixins";
+@import "../../../../common/styles/sass/variables";
+
+.container{
+  width: 100%;
+  position: relative;
+  @include flex(row);
+  gap:64px;
+  justify-content: center;
+  margin-top: 228px;
+  margin-bottom: 253px;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1055px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .leftBlock{
+    position: relative;
+    img{
+      @media screen and (max-width: 550px) {
+        width: 300px;
+      }
+    }
+    .noteBlock{
+      position: absolute;
+      bottom: -35px;
+      left: 332px;
+      width: 671px;
+      height: 178px;
+      background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
+      border-radius: 20px;
+      @include flex(row);
+      justify-content: center;
+      align-items: center;
+      @media screen and (max-width: 1055px) {
+        left: calc(50% - 335px);
+      }
+      @media screen and (max-width: 550px) {
+        width: 300px;
+        height: 100px;
+        left: calc(50% - 150px);
+      }
+      .noteItems{
+        width: 637px;
+        height: 95px;
+        @include flex(row);
+        justify-content: space-between;
+        @media screen and (max-width: 550px) {
+          width: 300px;
+        }
+        .noteItem{
+          width: 203px;
+          @include flex(column);
+          justify-content: center;
+          align-items: center;
+          @media screen and (max-width: 550px) {
+            width: 100px;
+          }
+          .numbers{
+            @include text(48px, 900, 62px, $textColor2);
+            font-family: 'Frank Ruhl Libre', sans-serif;
+            @media screen and (max-width: 550px) {
+              @include text(18px, 400, 30px, $textColor2);
+            }
+          }
+          .text{
+            @include text(32px, 500, 41px, $textColor2);
+            font-family: 'Frank Ruhl Libre', sans-serif;
+            @media screen and (max-width: 550px) {
+              @include text(18px, 400, 30px, $textColor2);
+              text-align: center;
+            }
+          }
+        }
+        .noteItemWithBorders{
+          @include flex(column);
+          justify-content: center;
+          align-items: center;
+          border-width: 0 1px;
+          border-style: solid;
+          border-color: #FFFFFF;
+          padding: 0 25px 0;
+          .numbers{
+            @include text(48px, 900, 62px, $textColor2);
+            font-family: 'Frank Ruhl Libre', sans-serif;
+            @media screen and (max-width: 550px) {
+              @include text(18px, 400, 30px, $textColor2);
+              padding: 0 10px 0;
+            }
+          }
+          .text{
+            @include text(32px, 500, 41px, $textColor2);
+            font-family: 'Frank Ruhl Libre', sans-serif;
+            @media screen and (max-width: 550px) {
+              @include text(18px, 400, 30px, $textColor2);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .effect1{
+      position: absolute;
+      top:-40px;
+      right: 0;
+      img{
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(47deg) brightness(104%) contrast(101%);
+      }
+      @media screen and (max-width: 550px) {
+        display: none;
+      }
+    }
+    .effect1_1{
+      position: absolute;
+      top:390px;
+      right: -194px;
+      img{
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(47deg) brightness(104%) contrast(101%);
+      }
+      @media screen and (max-width: 1055px) {
+        display: none;
+      }
+    }
+  }
+  .rightBlock{
+    @media screen and (max-width: 1055px) {
+      @include flex(column);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .title{
+      margin: 22px 0 0 0;
+      width: 341px;
+      height: 176px;
+      @include text(68px, 900, 88px, $textColor1);
+      font-family: 'Frank Ruhl Libre', sans-serif;
+    }
+    .description{
+      margin-top: 50px;
+      display: block;
+      width: 500px;
+      height: 144px;
+      @include text(20px, 400, 24px, $textColor1);
+      font-family: 'Lato', sans-serif;
+      @media screen and (max-width: 550px) {
+        margin-top: 20px;
+        width: 300px;
+      }
+    }
+  }
+  .effect2{
+    position: absolute;
+    top:100px;
+    left:-20px;
+    @media screen and (max-width: 1265px) {
+      display: none;
+    }
+  }
+  .effect3{
+    position: absolute;
+    top:0;
+    right:0;
+    @media screen and (max-width: 1265px) {
+      display: none;
+    }
+  }
+}
