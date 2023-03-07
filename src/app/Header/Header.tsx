@@ -4,7 +4,12 @@ import logo from 'assets/logo.svg'
 import squares from 'assets/squares.svg'
 import { useNavigate } from 'react-router-dom'
 import { PATH } from '../routes/routes'
-export const Header = () => {
+
+type HeaderPropsType = {
+  background?: string
+}
+
+export const Header = (props: HeaderPropsType) => {
   const navigate = useNavigate()
   const goHome = () => {
     navigate(PATH.MAIN)
@@ -13,7 +18,7 @@ export const Header = () => {
     navigate(PATH.CATEGORY)
   }
   return (
-    <div className={s.container}>
+    <div className={s.container} style={{ background: props.background }}>
       <div className={s.logo}>
         <img src={logo} alt={'logo'} />
       </div>

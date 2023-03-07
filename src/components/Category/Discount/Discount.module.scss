@@ -1,0 +1,38 @@
+@import "../../../common/styles/sass/mixins";
+@import "../../../common/styles/sass/variables";
+
+.container{
+  margin: 18px 76px 0 42px;
+  @include flex(row);
+  justify-content: center;
+  gap:50px;
+  .leftBlock{
+    .title{
+      margin: 0;
+      @include text(40px, 900, 52px, $textColor1);
+      font-family: 'Frank Ruhl Libre', sans-serif;
+    }
+    .description{
+      display: inline-block;
+      width: 279px;
+      @include text(16px, 400, 19px, $textColor1);
+      font-family: 'Lato', sans-serif;
+      margin: 9px 0 79px;
+      p{
+        margin: 0;
+      }
+    }
+    .imageList{
+      @include flex(row);
+      gap:16px;
+      .image{
+        width: 176px;
+        height: 176px;
+      }
+    }
+  }
+  .rightBlock{
+
+  }
+
+}
