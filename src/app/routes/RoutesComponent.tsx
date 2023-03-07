@@ -9,7 +9,6 @@ export const RoutesComponent = () => {
     <Routes>
       <Route path={PATH.MAIN} element={<Home />} />
       <Route path={PATH.CATEGORY} element={<Category />} />
-      {/* <Route path={'*'} element={<Error404 />} />*/}
     </Routes>
   )
 }
