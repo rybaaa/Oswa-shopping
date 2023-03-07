@@ -1,0 +1,10 @@
+@import "../../common/styles/sass/mixins";
+@import "../../common/styles/sass/variables";
+
+.container{
+  .categories{
+    @include flex(row);
+    flex-wrap: wrap;
+    gap:47px;
+  }
+}

@@ -70,9 +70,12 @@
         border: none;
         cursor: pointer;
         margin-top: 65px;
+        transition: width 1s;
         @include text(22px, 500, 24px, $textColor2);
         &:hover{
           opacity: 0.8;
+          width: 300px;
+          scale: 1.1;
         }
         &:active{
           background-color: #FA90D6;
