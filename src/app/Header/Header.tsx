@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Header.module.scss'
 import logo from 'assets/logo.svg'
 import squares from 'assets/squares.svg'
-import { useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { PATH } from '../routes/routes'
 
 type HeaderPropsType = {
@@ -10,25 +10,24 @@ type HeaderPropsType = {
 }
 
 export const Header = (props: HeaderPropsType) => {
-  const navigate = useNavigate()
-  const goHome = () => {
-    navigate(PATH.MAIN)
-  }
-  const goToCategory = () => {
-    navigate(PATH.CATEGORY)
-  }
   return (
     <div className={s.container} style={{ background: props.background }}>
       <div className={s.logo}>
         <img src={logo} alt={'logo'} />
       </div>
       <div className={s.navbar}>
-        <button className={s.navbarItem} onClick={goHome}>
+        <NavLink
+          to={PATH.MAIN}
+          className={({ isActive }) => (isActive ? s.isActive : s.navbarItem)}
+        >
           Home
-        </button>
-        <button className={s.navbarItem} onClick={goToCategory}>
+        </NavLink>
+        <NavLink
+          to={PATH.CATEGORY}
+          className={({ isActive }) => (isActive ? s.isActive : s.navbarItem)}
+        >
           Category
-        </button>
+        </NavLink>
         <button className={s.navbarItem}>Cart</button>
         <button className={s.navbarItem}>Payment</button>
         <button className={s.navbarItem}>Account</button>
