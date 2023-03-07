@@ -1,6 +1,6 @@
 # Oswa Shopping
 The Best Store To Shop Online ALL IN ONE
-## [Demo](https://oswa-shopping.vercel.app/)
+## [Demo](https://oswa-shopping.vercel.app/) Still in progress..
 
 ## Stack
 
