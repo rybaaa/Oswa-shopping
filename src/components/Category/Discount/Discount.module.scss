@@ -5,8 +5,14 @@
   margin: 18px 76px 0 42px;
   @include flex(row);
   justify-content: center;
+  flex-wrap: wrap;
   gap:50px;
   .leftBlock{
+    @include flex(column);
+    @media screen and (max-width: 1107px) {
+      align-items: center;
+      text-align: center;
+    }
     .title{
       margin: 0;
       @include text(40px, 900, 52px, $textColor1);
@@ -18,13 +24,20 @@
       @include text(16px, 400, 19px, $textColor1);
       font-family: 'Lato', sans-serif;
       margin: 9px 0 79px;
+      @media screen and (max-width: 1107px) {
+        margin: 9px 0 30px;
+      }
       p{
         margin: 0;
       }
     }
     .imageList{
       @include flex(row);
+      flex-wrap: wrap;
       gap:16px;
+      @media screen and (max-width: 1270px) {
+        justify-content: center;
+      }
       .image{
         width: 176px;
         height: 176px;
@@ -32,7 +45,15 @@
     }
   }
   .rightBlock{
-
+    .girlImage{
+      @media screen and (max-width: 1107px) {
+        width: 350px;
+        height: 350px;
+      }
+    }
+    @media screen and (max-width: 694px) {
+      display: none ;
+    }
   }
 
 }

@@ -18,6 +18,9 @@ export const Discount = () => {
           <img className={s.image} src={bags} alt={'bags'} />
           <img className={s.image} src={shoes} alt={'shoes'} />
           <img className={s.image} src={sweater} alt={'sweater'} />
+          <img className={s.image} src={bags} alt={'bags'} />
+          <img className={s.image} src={shoes} alt={'shoes'} />
+          <img className={s.image} src={sweater} alt={'sweater'} />
         </div>
       </div>
       <div className={s.rightBlock}>

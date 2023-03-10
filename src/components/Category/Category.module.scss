@@ -2,10 +2,19 @@
 @import "../../common/styles/sass/variables";
 
 .container{
+  .title{
+    @include text(48px, 500, 72px,$textColor1);
+    margin: 96px 0 23px 42px;
+    @media screen and (max-width: 1409px) {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
   .categories{
     @include flex(row);
     justify-content: center;
     flex-wrap: wrap;
     gap:47px;
+    margin-bottom: 113px;
   }
 }

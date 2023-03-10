@@ -1,7 +1,37 @@
+@import "../../../common/styles/sass/mixins";
+@import "../../../common/styles/sass/variables";
+
 .category{
   width: 433px;
   height: 650px;
   background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
   border-radius: 8px;
   text-align: center;
+  @include flex(column);
+  justify-content: flex-end;
+  align-items: center;
+  gap:60px;
+  cursor: pointer;
+  transition: 1s;
+  &:hover{
+    opacity: 0.8;
+    scale: 1.05;
+  }
+  @media screen and (max-width: 1409px) {
+    width: 300px;
+    height: 400px;
+  }
+  .image{
+    @media screen and (max-width: 1409px) {
+      width: 300px;
+      height: 200px;
+    }
+  }
+  .title{
+    margin: 0 0 85px 0;
+    @include text(48px, 500, 72px, $textColor1);
+    @media screen and (max-width: 1409px) {
+      margin: 0;
+    }
+  }
 }
