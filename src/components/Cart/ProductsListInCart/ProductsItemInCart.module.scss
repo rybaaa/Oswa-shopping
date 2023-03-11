@@ -1,0 +1,28 @@
+@import "../../../common/styles/sass/mixins";
+@import "../../../common/styles/sass/variables";
+
+.product{
+  width: 968px;
+  height: 308px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 47px #AB5E90;
+  border-radius: 20px;
+  @include flex(row);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 55px;
+  .product__info{
+    @include flex(column);
+    flex:1;
+    .product__info__chosen{
+      @include flex(row);
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product__info__select{
+      @include flex(row);
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
