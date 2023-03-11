@@ -34,8 +34,18 @@ export const Header = (props: HeaderPropsType) => {
         >
           Cart
         </NavLink>
-        <button className={s.navbarItem}>Payment</button>
-        <button className={s.navbarItem}>Account</button>
+        <NavLink
+          to={PATH.PAYMENT}
+          className={({ isActive }) => (isActive ? s.isActive : s.navbarItem)}
+        >
+          Payment
+        </NavLink>
+        <NavLink
+          to={PATH.ACCOUNT}
+          className={({ isActive }) => (isActive ? s.isActive : s.navbarItem)}
+        >
+          Account
+        </NavLink>
       </div>
       <button className={s.login}>Login</button>
       <div className={s.effects}>
