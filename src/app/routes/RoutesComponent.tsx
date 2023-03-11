@@ -1,11 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { PATH } from './routes'
-import { Home } from '../../components/Home/Home'
-import { Category } from '../../components/Category/Category'
-import { Cart } from '../../components/Cart/Cart'
-import { Payment } from '../../components/Payment/Payment'
-import { Account } from '../../components/Account/Account'
+import { Home } from 'components/Home/Home'
+import { Category } from 'components/Category/Category'
+import { Cart } from 'components/Cart/Cart'
+import { Payment } from 'components/Payment/Payment'
+import { Account } from 'components/Account/Account'
+import { Error404 } from '../Error404/Error404'
 
 export const RoutesComponent = () => {
   return (
@@ -15,6 +16,7 @@ export const RoutesComponent = () => {
       <Route path={PATH.CART} element={<Cart />} />
       <Route path={PATH.PAYMENT} element={<Payment />} />
       <Route path={PATH.ACCOUNT} element={<Account />} />
+      <Route path={'*'} element={<Error404 />} />
     </Routes>
   )
 }
