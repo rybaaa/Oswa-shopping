@@ -19,6 +19,7 @@
     overflow: hidden;
     //background: url("../../../assets/arrow.svg") no-repeat right;
     cursor: pointer;
+    @include text(16px, 400, 24px, $textColor1);
   }
 
   .icon_container {
@@ -26,7 +27,7 @@
     width: 30px;
     height: 40px;
     right: 0;
-    top: 30px;
+    top: 40px;
     pointer-events: none;
   }
 }

@@ -1,2 +1,14 @@
 @import "../../common/styles/sass/mixins";
 @import "../../common/styles/sass/variables";
+
+.container{
+  margin: 18px 0 40px 70px;
+  .title{
+    @include text(32px, 500, 48px, $textColor1);
+    margin: 63px auto 18px;
+  }
+  .productsList{
+    @include flex(column);
+    gap:40px;
+  }
+}

@@ -7,6 +7,9 @@ import remove from 'assets/remove.svg'
 type ProductsItemInCartPropsType = Omit<ProductsType, 'id'>
 
 export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
+  const removeProduct = () => {
+    confirm(`Do you really want to remove ${props.title}?`)
+  }
   return (
     <div className={s.product}>
       <div className={s.product__image}>
@@ -15,15 +18,15 @@ export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
       <div className={s.product__info}>
         <div className={s.product__info__chosen}>
           <h5 className={s.product__title}>{props.title}</h5>
-          <div className={s.product__price}>
+          <div className={s.product__infoBlock}>
             <span className={s.product__item__title}>price</span>
             <span className={s.product__item__number}>{props.price}$</span>
           </div>
-          <div className={s.product__quantity}>
+          <div className={s.product__infoBlock}>
             <span className={s.product__item__title}>quantity</span>
             <span className={s.product__item__number}>{props.quantity}</span>
           </div>
-          <div className={s.product__quantity}>
+          <div className={s.product__infoBlock}>
             <span className={s.product__item__title}>Total</span>
             <span className={s.product__item__number}>{props.price * props.quantity}$</span>
           </div>
@@ -35,7 +38,7 @@ export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
             <span className={s.product__info_colorTitle}>color</span>
             <div className={s.product__info__colorType}></div>
           </div>
-          <div className={s.iconRemove}>
+          <div onClick={removeProduct} className={s.iconRemove}>
             <img src={remove} alt={'remove product'} />
           </div>
         </div>

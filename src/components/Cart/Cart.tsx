@@ -64,8 +64,8 @@ export const Cart = () => {
         background={'linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%)'}
       />
       <div className={s.container}>
-        <h3></h3>
-        {productsList}
+        <h3 className={s.title}>Products in the cart</h3>
+        <div className={s.productsList}>{productsList}</div>
       </div>
       <Footer />
     </div>

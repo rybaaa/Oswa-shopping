@@ -10,7 +10,7 @@ type CustomSelectPropsType = {
 export const CustomSelect = (props: CustomSelectPropsType) => {
   return (
     <div className={s.customSelectContainer}>
-      <span className={s.title}>{props.title}</span>
+      <span className={s.customSelect__title}>{props.title}</span>
       <select className={s.customSelect}>
         <option value={'0'}>{props.items[0]}</option>
         <option value={'1'}>{props.items[1]}</option>

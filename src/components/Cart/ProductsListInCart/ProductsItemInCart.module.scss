@@ -14,15 +14,52 @@
   .product__info{
     @include flex(column);
     flex:1;
+    gap:70px;
+    margin-left: 20px;
     .product__info__chosen{
       @include flex(row);
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      .product__title{
+        margin: 0;
+        @include text(20px, 900, 26px, $textColor1);
+        font-family: 'Frank Ruhl Libre', sans-serif;
+      }
+      .product__infoBlock{
+        @include flex(column);
+          align-items: center;
+        .product__item__title{
+          @include text(20px, 400, 30px, #777777);
+        }
+        .product__item__number{
+          @include text(32px, 300, 41px, $textColor1);
+          font-family: 'Frank Ruhl Libre', sans-serif;
+        }
+      }
     }
     .product__info__select{
       @include flex(row);
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+      .product__info__color{
+        @include flex(column);
+        align-items: center;
+        .product__info_colorTitle{
+          @include text(20px, 400, 30px, #777);
+        }
+        .product__info__colorType{
+          width: 42px;
+          height: 42px;
+          border-radius: 40px;
+          background-color: #B17774;
+        }
+      }
+      .iconRemove{
+        cursor: pointer;
+        &:hover{
+          opacity: .8;
+        }
+      }
     }
   }
 }
