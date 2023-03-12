@@ -1,14 +1,69 @@
 @import "../../common/styles/sass/mixins";
 @import "../../common/styles/sass/variables";
 
-.container{
-  margin: 18px 0 40px 70px;
-  .title{
-    @include text(32px, 500, 48px, $textColor1);
-    margin: 63px auto 18px;
+.container {
+  margin: 63px 0 40px 70px;
+  @include flex(row);
+  gap: 50px;
+
+  .productsList__container {
+    .title {
+      @include text(32px, 500, 48px, $textColor1);
+      margin: 0 auto 18px;
+    }
+
+    .productsList {
+      @include flex(column);
+      gap: 40px;
+    }
   }
-  .productsList{
-    @include flex(column);
-    gap:40px;
+.payment__container{
+  @include flex(column);
+  width: 450px;
+  .payment__shipping{
+    height: 69px;
+    background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
+    border-radius: 20px;
+    text-align: center;
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+    @include text(20px, 600, 30px, $textColor2);
   }
+  .payment__amount{
+    @include flex(row);
+    gap:79px;
+    margin: 89px 45px 57px 45px;
+    .payment__title{
+      @include text(24px, 500, 36px, $textColor1);
+    }
+    .payment__count{
+      @include text(32px, 300, 41px, $textColor1);
+      font-family: 'Frank Ruhl Libre', sans-serif;
+    }
+  }
+  .payment__btn{
+    width: 269px;
+    height: 54px;
+    background: #8C4A76;
+    box-shadow: 1px -4px 4px #6B385A, 1px 4px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 12px 79px;
+    @include text(20px, 600, 30px, $textColor2);
+    margin: 0 87px;
+    cursor: pointer;
+    &:hover{
+      opacity: .8;
+    }
+  }
+  .payment__accept{
+    margin: 57px 0 57px 57px;
+    @include text(24px, 500, 36px, $textColor1);
+  }
+  .payment__cardsList{
+    @include flex(row);
+    gap:15px;
+    margin: 0 0 0 57px;
+  }
+}
 }
