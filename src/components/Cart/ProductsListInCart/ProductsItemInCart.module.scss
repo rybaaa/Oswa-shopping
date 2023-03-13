@@ -1,63 +1,134 @@
 @import "../../../common/styles/sass/mixins";
 @import "../../../common/styles/sass/variables";
 
-.product{
+.product {
   width: 968px;
   height: 308px;
   background: #FFFFFF;
   box-shadow: 4px 4px 47px #AB5E90;
   border-radius: 20px;
   @include flex(row);
+  //flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 55px;
-  .product__info{
+  @media screen and (max-width: 1664px) {
+    width: 800px;
+  }
+  @media screen and (max-width: 1346px) {
+    width: 700px;
+  }
+  @media screen and (max-width: 1246px) {
+    width: 600px;
+  }
+  @media screen and (max-width: 740px) {
+    width: 320px;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product__image {
+    @include flex(row);
+    @media screen and (max-width: 740px) {
+      justify-content: center;
+    }
+
+    img {
+      @media screen and (max-width: 740px) {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+  .product__info {
     @include flex(column);
-    flex:1;
-    gap:70px;
+    flex: 1;
+    gap: 70px;
     margin-left: 20px;
-    .product__info__chosen{
+    @media screen and (max-width: 740px) {
+      gap: 10px;
+      margin-left: 0;
+    }
+
+    .product__info__chosen {
       @include flex(row);
       justify-content: space-between;
       align-items: flex-start;
-      .product__title{
+
+      .product__title {
         margin: 0;
         @include text(20px, 900, 26px, $textColor1);
         font-family: 'Frank Ruhl Libre', sans-serif;
-      }
-      .product__infoBlock{
-        @include flex(column);
-          align-items: center;
-        .product__item__title{
-          @include text(20px, 400, 30px, #777777);
+        @media screen and (max-width: 740px) {
+          @include text(16px, 500, 20px, $textColor1);
         }
-        .product__item__number{
+      }
+
+      .product__infoBlock {
+        @include flex(column);
+        align-items: center;
+
+        .product__item__title {
+          @include text(20px, 400, 30px, #777777);
+          @media screen and (max-width: 740px) {
+            @include text(16px, 400, 20px, #777777);
+          }
+        }
+
+        .product__item__number {
           @include text(32px, 300, 41px, $textColor1);
           font-family: 'Frank Ruhl Libre', sans-serif;
+          @media screen and (max-width: 740px) {
+            @include text(16px, 300, 20px, $textColor1);
+          }
         }
       }
     }
-    .product__info__select{
+
+    .product__info__select {
       @include flex(row);
       justify-content: space-between;
       align-items: flex-end;
-      .product__info__color{
+
+      .product__info__color {
         @include flex(column);
         align-items: center;
-        .product__info_colorTitle{
+
+        .product__info_colorTitle {
           @include text(20px, 400, 30px, #777);
+          @media screen and (max-width: 740px) {
+            @include text(16px, 300, 20px, $textColor1);
+          }
         }
-        .product__info__colorType{
+
+        .product__info__colorType {
           width: 42px;
           height: 42px;
           border-radius: 40px;
           background-color: #B17774;
+          @media screen and (max-width: 740px) {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
-      .iconRemove{
+
+      .iconRemove {
         cursor: pointer;
-        &:hover{
+
+        &:hover {
           opacity: .8;
+        }
+
+        img {
+          @media screen and (max-width: 740px) {
+            width: 30px;
+            height: 30px;
+          }
         }
       }
     }

@@ -7,6 +7,9 @@
 
   .customSelect__title {
     @include text(20px, 400, 30px, #777777);
+    @media screen and (max-width: 740px) {
+      @include text(16px, 400, 20px, #777777);
+    }
   }
 
   .customSelect {
@@ -20,6 +23,10 @@
     //background: url("../../../assets/arrow.svg") no-repeat right;
     cursor: pointer;
     @include text(16px, 400, 24px, $textColor1);
+    @media screen and (max-width: 740px) {
+      width: 70px;
+      height: 30px;
+    }
   }
 
   .icon_container {
@@ -29,5 +36,8 @@
     right: 0;
     top: 40px;
     pointer-events: none;
+    @media screen and (max-width: 740px) {
+      top:25px;
+    }
   }
 }
