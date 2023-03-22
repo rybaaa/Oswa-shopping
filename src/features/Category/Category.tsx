@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CategoryItem } from './CategoryItem/CategoryItem'
 import s from './Category.module.scss'
 import { Header } from '../../app/Header/Header'
 import { Footer } from '../../app/Footer/Footer'
 import { Discount } from './Discount/Discount'
 import { images } from '../../assets/categories'
+import { useAppDispatch } from '../../app/store'
+import { getCategoriesTC } from './category-reducer'
 
 type CategoriesType = {
   id: number
@@ -13,6 +15,10 @@ type CategoriesType = {
 }
 
 export const Category = () => {
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(getCategoriesTC())
+  }, [])
   const categories: CategoriesType[] = [
     { id: 1, title: 'Makeup', image: images.makeup },
     { id: 2, title: 'Shoes', image: images.shoes2 },
