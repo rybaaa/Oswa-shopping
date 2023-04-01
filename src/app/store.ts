@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import { appReducer } from './app-reducer'
+import { AppActionsType, appReducer } from './app-reducer'
 import { cartReducer } from '../features/cart/cart-reducer'
 import { categoryReducer } from '../features/Category/category-reducer'
 
@@ -42,4 +42,4 @@ export type AsyncThunkConfig = {
   rejectedMeta?: unknown
 }
 
-export type ActionsType = any
+export type ActionsType = AppActionsType

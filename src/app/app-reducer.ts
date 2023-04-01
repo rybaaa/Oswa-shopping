@@ -1,7 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AxiosError } from 'axios'
-
-import { RootStateType } from 'app/store'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type StatusType = 'idle' | 'loading' | 'success' | 'failed'
 
@@ -14,9 +11,24 @@ const initialState = {
 const slice = createSlice({
   name: 'app',
   initialState,
-  reducers: {},
+  reducers: {
+    setErrorAC(state, action: PayloadAction<{ error: string | null }>) {
+      state.error = action.payload.error
+    },
+    setSubmittingAC(state, action: PayloadAction<{ status: StatusType }>) {
+      state.status = action.payload.status
+    },
+    setAppInitializedAC(state, action: PayloadAction<{ isInitialized: boolean }>) {
+      state.isInitialized = action.payload.isInitialized
+    },
+  },
 })
 
 export const appReducer = slice.reducer
 
-// export const {} = slice.actions
+export const { setErrorAC, setSubmittingAC, setAppInitializedAC } = slice.actions
+
+export type AppActionsType =
+  | ReturnType<typeof setErrorAC>
+  | ReturnType<typeof setSubmittingAC>
+  | ReturnType<typeof setAppInitializedAC>
