@@ -3,12 +3,16 @@ import s from './ProductsItemInCart.module.scss'
 import { CustomSelect } from '../../../common/components/CustomSelect/CustomSelect'
 import remove from 'assets/remove.svg'
 import { ProductsInCartResponseType } from '../../../api/cart-api'
+import { useAppDispatch } from '../../../app/store'
+import { removeProductFromCartTC } from '../cart-reducer'
 
-type ProductsItemInCartPropsType = Omit<ProductsInCartResponseType, 'id'>
+type ProductsItemInCartPropsType = ProductsInCartResponseType
 
 export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
-  const removeProduct = () => {
-    confirm(`Do you really want to remove ${props.title}?`)
+  const dispatch = useAppDispatch()
+  const removeProduct = (id: string) => {
+    console.log(props.id)
+    dispatch(removeProductFromCartTC(id))
   }
   return (
     <div className={s.product}>
@@ -41,7 +45,7 @@ export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
               ></div>
             </div>
           )}
-          <div onClick={removeProduct} className={s.iconRemove}>
+          <div onClick={() => removeProduct(props.id)} className={s.iconRemove}>
             <img src={remove} alt={'remove product'} />
           </div>
         </div>

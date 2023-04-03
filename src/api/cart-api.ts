@@ -4,6 +4,9 @@ export const cartApi = {
   getProducts() {
     return instance.get<ProductsInCartResponseType[]>('cart')
   },
+  removeProduct(id: string) {
+    return instance.delete('cart', { params: id })
+  },
 }
 
 export type ProductsInCartResponseType = {

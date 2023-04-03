@@ -12,9 +12,12 @@ import { getProductsInCartTC, productsInCartSelector } from './cart-reducer'
 export const Cart = () => {
   const dispatch = useAppDispatch()
   const products = useAppSelector(productsInCartSelector)
+  console.log(products)
+
   const productsList = products.map((el) => (
     <ProductsItemInCart
       key={el.id}
+      id={el.id}
       title={el.title}
       price={el.price}
       quantity={el.quantity}
