@@ -8,15 +8,17 @@
   flex-wrap: wrap;
   padding-top: 18px;
   padding-left: 145px;
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1200px) {
     justify-content: center;
     padding-left: 0;
   }
-  .logo{
+
+  .logo {
     width: 164px;
     height: 130px;
   }
-  .navbar{
+
+  .navbar {
     cursor: pointer;
     height: 36px;
     @include flex(row);
@@ -24,39 +26,52 @@
     align-items: center;
     margin-left: 98px;
     margin-top: 30px;
-    gap:48px;
-    @media screen and (max-width: 1576px){
+    gap: 48px;
+    @media screen and (max-width: 1576px) {
       margin-left: 0;
       margin-top: 20px;
-      gap:10px;
+      gap: 10px;
     }
-    @media screen and (max-width: 782px){
+    @media screen and (max-width: 782px) {
       margin-left: 0;
       margin-top: 20px;
       justify-content: center;
     }
-    .navbarItem{
+
+    .navbarItem {
       @include text(20px, 500, 30px, $textColor2);
       padding: 0 20px 0;
       border: none;
       background: none;
       text-decoration: none;
-      &:hover{
+      position: relative;
+
+      &:hover {
         cursor: pointer;
         background: #FFFFFF;
         box-shadow: inset -4px -4px 4px rgba(173, 173, 173, 0.25), inset 4px 4px 4px #CABDBD;
         border-radius: 20px;
-        color:$textColor1;
+        color: $textColor1;
       }
-      &:focus{
+
+      &:focus {
         background: #FFFFFF;
         box-shadow: inset -4px -4px 4px rgba(173, 173, 173, 0.25), inset 4px 4px 4px #CABDBD;
         border-radius: 20px;
-        color:$textColor1;
+        color: $textColor1;
+      }
+
+      .quantity {
+        font-size: 16px;
+        position: absolute;
+        color: #d51c1c;
+        top: -5px;
+        right: 5px;
       }
     }
   }
-  .login{
+
+  .login {
     width: 112px;
     height: 35px;
     background: #E03FA9;
@@ -68,34 +83,37 @@
     margin-top: 40px;
     cursor: pointer;
     border: none;
-    @media screen and (max-width: 1576px){
+    @media screen and (max-width: 1576px) {
       margin-left: 0;
       margin-top: 22px;
       margin-right: 0;
     }
-    @media screen and (max-width: 613px){
+    @media screen and (max-width: 613px) {
       margin-left: 0;
       margin-top: 40px;
       margin-right: 0;
     }
-    &:hover{
+
+    &:hover {
       opacity: 0.8;
     }
-    &:active{
+
+    &:active {
       background-color: #BA6B9F;
     }
   }
-  .effects{
+
+  .effects {
     position: absolute;
-    top:8px;
+    top: 8px;
     right: -32px;
-    @media screen and (max-width: 1576px){
+    @media screen and (max-width: 1576px) {
       display: none;
     }
   }
 }
 
-.isActive{
+.isActive {
   @include text(20px, 500, 30px, $textColor2);
   padding: 0 20px 0;
   border: none;
@@ -103,6 +121,14 @@
   background: #FFFFFF;
   box-shadow: inset -4px -4px 4px rgba(173, 173, 173, 0.25), inset 4px 4px 4px #CABDBD;
   border-radius: 20px;
-  color:$textColor1;
+  color: $textColor1;
   text-decoration: none;
+  position: relative;
+  .quantity {
+    font-size: 16px;
+    position: absolute;
+    color: #d51c1c;
+    top: -5px;
+    right: 5px;
+  }
 }

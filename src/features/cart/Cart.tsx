@@ -1,67 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Header } from '../../app/Header/Header'
 import { Footer } from '../../app/Footer/Footer'
 import { ProductsItemInCart } from './ProductsListInCart/ProductsItemInCart'
 import s from './Cart.module.scss'
-import pajamaST from 'assets/productsInCart/pajamaST.png'
-import pajamaODH from 'assets/productsInCart/pajama ODH.png'
-import chanel from 'assets/productsInCart/chanel.png'
 import mastercard from 'assets/payments/mastercard.png'
 import visa from 'assets/payments/visa.png'
 import paypal from 'assets/payments/paypal.png'
-
-export type ProductsType = {
-  id: number
-  title: string
-  price: number
-  quantity: number
-  size: string
-  color: string
-  image: string
-}
+import { useAppDispatch, useAppSelector } from '../../app/store'
+import { getProductsInCartTC, productsInCartSelector } from './cart-reducer'
 
 export const Cart = () => {
-  const products: ProductsType[] = [
-    {
-      id: 1,
-      title: 'pajama ST',
-      price: 140,
-      quantity: 1,
-      size: 'S',
-      color: '#B17774',
-      image: pajamaST,
-    },
-    {
-      id: 2,
-      title: 'pajama ODH',
-      price: 120,
-      quantity: 1,
-      size: 'S',
-      color: '#D4D0CF',
-      image: pajamaODH,
-    },
-    {
-      id: 3,
-      title: 'perfume Chanel',
-      price: 520,
-      quantity: 1,
-      size: '20ml',
-      color: '#ED87CB',
-      image: chanel,
-    },
-  ]
+  const dispatch = useAppDispatch()
+  const products = useAppSelector(productsInCartSelector)
   const productsList = products.map((el) => (
     <ProductsItemInCart
       key={el.id}
       title={el.title}
       price={el.price}
       quantity={el.quantity}
-      size={el.size}
+      currentQuantity={el.currentQuantity}
+      sizes={el.sizes}
       color={el.color}
+      currentColor={el.currentColor}
       image={el.image}
     />
   ))
   const totalAmount = products.reduce((sum, curr) => sum + curr.price, 0)
+
+  useEffect(() => {
+    dispatch(getProductsInCartTC())
+  }, [])
   return (
     <div>
       <Header

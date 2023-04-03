@@ -6,7 +6,7 @@ export const categoriesApi = {
   },
 }
 
-type CategoriesResponseType = {
+export type CategoriesResponseType = {
   id: string
   title: string
   image: string

@@ -4,12 +4,15 @@ import logo from 'assets/logo.svg'
 import squares from 'assets/squares.svg'
 import { NavLink } from 'react-router-dom'
 import { PATH } from '../routes/routes'
+import { useAppSelector } from '../store'
+import { productsQuantity } from '../../features/cart/cart-reducer'
 
 type HeaderPropsType = {
   background?: string
 }
 
 export const Header = (props: HeaderPropsType) => {
+  const quantityProducts = useAppSelector(productsQuantity)
   return (
     <div className={s.container} style={{ background: props.background }}>
       <div className={s.logo}>
@@ -32,7 +35,10 @@ export const Header = (props: HeaderPropsType) => {
           to={PATH.CART}
           className={({ isActive }) => (isActive ? s.isActive : s.navbarItem)}
         >
-          Cart
+          <div>
+            Cart
+            <div className={s.quantity}>{quantityProducts}</div>
+          </div>
         </NavLink>
         <NavLink
           to={PATH.PAYMENT}

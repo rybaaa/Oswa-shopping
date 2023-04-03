@@ -2,12 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
 
 import { RootStateType } from 'app/store'
-import { categoriesApi } from '../../api/categories-api'
+import { categoriesApi, CategoriesResponseType } from '../../api/categories-api'
 import { setSubmittingAC } from '../../app/app-reducer'
 import { errorMessage } from '../../utils/error-util'
 
-const initialState = {
-  categories: [{ id: '', title: '', image: '' }],
+type CategoriesType = {
+  categories: CategoriesResponseType[]
+}
+
+const initialState: CategoriesType = {
+  categories: [],
 }
 
 const slice = createSlice({
@@ -39,7 +43,6 @@ export const getCategoriesTC = createAsyncThunk(
       return response.data
     } catch (e) {
       const error = e as Error | AxiosError
-      console.log(e)
 
       return rejectWithValue(errorMessage(dispatch, error))
     }
