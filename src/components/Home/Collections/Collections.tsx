@@ -4,6 +4,7 @@ import squares from 'assets/squares2.svg'
 import { Title } from '../../../common/components/Title/Title'
 import { NewCollection } from './New Collection/NewCollection'
 import { BestSellsOld } from './BestSellsOld/BestSellsOld'
+import Fade from 'react-reveal/Fade'
 
 export const Collections = () => {
   return (
@@ -21,7 +22,9 @@ export const Collections = () => {
         Latest trends in clothing for women, men & kids. Find new arrivals, fashion catalogs,
         collections & lookbooks every week.
       </span>
-      <NewCollection />
+      <Fade bottom>
+        <NewCollection />
+      </Fade>
       <BestSellsOld />
     </div>
   )

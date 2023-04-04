@@ -7,6 +7,7 @@ import { Discount } from './Discount/Discount'
 import { useAppDispatch, useAppSelector } from '../../app/store'
 import { categoriesSelector, getCategoriesTC } from './category-reducer'
 import { ErrorSnackbar } from '../../common/components/error-snackbar/ErrorSnackbar'
+import Fade from 'react-reveal/Fade'
 
 export const Category = () => {
   const dispatch = useAppDispatch()
@@ -25,8 +26,12 @@ export const Category = () => {
       <Header
         background={'linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%)'}
       />
-      <Discount />
-      <h2 className={s.title}>Categories in the store</h2>
+      <Fade left>
+        <Discount />
+      </Fade>
+      <Fade left>
+        <h2 className={s.title}>Categories in the store</h2>
+      </Fade>
       <div className={s.categories}>{categoriesList}</div>
       <Footer />
     </div>

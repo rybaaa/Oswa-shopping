@@ -4,16 +4,22 @@ import bags from 'assets/bags.png'
 import shoes from 'assets/shoes.png'
 import sweater from 'assets/sweater.png'
 import girl from 'assets/girl.png'
+import Fade from 'react-reveal/Fade'
 
 export const Discount = () => {
   return (
     <div className={s.container}>
       <div className={s.leftBlock}>
-        <h2 className={s.title}>Discount of all types clothes</h2>
-        <span className={s.description}>
-          Permanent offers on clothes <p>A large selection of the most beautiful</p> clothes that
-          suit you
-        </span>
+        <Fade left cascade>
+          <div>
+            <h2 className={s.title}>Discount of all types clothes</h2>
+            <span className={s.description}>
+              Permanent offers on clothes <p>A large selection of the most beautiful</p> clothes
+              that suit you
+            </span>
+          </div>
+        </Fade>
+
         <div className={s.imageList}>
           <img className={s.image} src={bags} alt={'bags'} />
           <img className={s.image} src={shoes} alt={'shoes'} />
