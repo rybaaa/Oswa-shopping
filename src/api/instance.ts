@@ -1,6 +1,6 @@
 import axios from 'axios'
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:5000/' || 'https://oswa-shopping-backend.vercel.app/',
+  baseURL: 'https://oswa-shopping-backend.vercel.app/',
   withCredentials: true,
 })
