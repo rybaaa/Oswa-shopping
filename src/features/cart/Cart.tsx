@@ -7,12 +7,19 @@ import mastercard from 'assets/payments/mastercard.png'
 import visa from 'assets/payments/visa.png'
 import paypal from 'assets/payments/paypal.png'
 import { useAppDispatch, useAppSelector } from '../../app/store'
-import { getProductsInCartTC, productsInCartSelector } from './cart-reducer'
+import {
+  getProductsInCartTC,
+  productsInCartSelector,
+  removeProductFromCartTC,
+} from './cart-reducer'
 
 export const Cart = () => {
   const dispatch = useAppDispatch()
   const products = useAppSelector(productsInCartSelector)
-  console.log(products)
+
+  const removeProduct = (id: string) => {
+    dispatch(removeProductFromCartTC(id))
+  }
 
   const productsList = products.map((el) => (
     <ProductsItemInCart
@@ -33,6 +40,9 @@ export const Cart = () => {
   useEffect(() => {
     dispatch(getProductsInCartTC())
   }, [])
+  useEffect(() => {
+    console.log('Products changed: ', products)
+  }, [products])
   return (
     <div>
       <Header
@@ -49,12 +59,7 @@ export const Cart = () => {
             <span className={s.payment__title}>The total amount</span>
             <span className={s.payment__count}>{totalAmount}$</span>
           </div>
-          <button
-            onClick={() => {
-              alert('The order was registered!')
-            }}
-            className={s.payment__btn}
-          >
+          <button onClick={() => removeProduct(products[0].id)} className={s.payment__btn}>
             Checkout
           </button>
           <span className={s.payment__accept}>Accept</span>

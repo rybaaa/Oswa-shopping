@@ -8,10 +8,12 @@ import { cartApi, ProductsInCartResponseType } from '../../api/cart-api'
 
 type ProductsInCart = {
   products: ProductsInCartResponseType[]
+  quantity: number
 }
 
 const initialState: ProductsInCart = {
   products: [],
+  quantity: 0,
 }
 
 const slice = createSlice({
@@ -22,13 +24,9 @@ const slice = createSlice({
     builder.addCase(getProductsInCartTC.fulfilled, (state, action) => {
       if (action.payload) {
         state.products = action.payload
+        state.quantity = action.payload.length
       }
-    }),
-      builder.addCase(removeProductFromCartTC.fulfilled, (state, action) => {
-        if (action.payload) {
-          state.products = action.payload
-        }
-      })
+    })
   },
 })
 
@@ -58,10 +56,9 @@ export const removeProductFromCartTC = createAsyncThunk(
     dispatch(setSubmittingAC({ status: 'loading' }))
     try {
       const response = await cartApi.removeProduct(id)
-      console.log('test')
 
       dispatch(setSubmittingAC({ status: 'success' }))
-      // dispatch(getProductsInCartTC())
+      dispatch(getProductsInCartTC())
 
       return response.data
     } catch (e) {
@@ -75,4 +72,4 @@ export const removeProductFromCartTC = createAsyncThunk(
 // export const {} = slice.actions
 
 export const productsInCartSelector = (state: RootStateType) => state.cart.products
-export const productsQuantity = (state: RootStateType) => state.cart.products.length
+export const productsQuantitySelector = (state: RootStateType) => state.cart.quantity

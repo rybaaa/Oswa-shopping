@@ -5,14 +5,14 @@ import squares from 'assets/squares.svg'
 import { NavLink } from 'react-router-dom'
 import { PATH } from '../routes/routes'
 import { useAppSelector } from '../store'
-import { productsQuantity } from '../../features/cart/cart-reducer'
+import { productsQuantitySelector } from '../../features/cart/cart-reducer'
 
 type HeaderPropsType = {
   background?: string
 }
 
 export const Header = (props: HeaderPropsType) => {
-  const quantityProducts = useAppSelector(productsQuantity)
+  const quantityProducts = useAppSelector(productsQuantitySelector)
   return (
     <div className={s.container} style={{ background: props.background }}>
       <div className={s.logo}>

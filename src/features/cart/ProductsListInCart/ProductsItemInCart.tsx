@@ -11,7 +11,6 @@ type ProductsItemInCartPropsType = ProductsInCartResponseType
 export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
   const dispatch = useAppDispatch()
   const removeProduct = (id: string) => {
-    console.log(props.id)
     dispatch(removeProductFromCartTC(id))
   }
   return (
