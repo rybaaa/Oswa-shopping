@@ -16,8 +16,9 @@ export const Makeup = () => {
       <div className={s.category__item__wrapper}>
         <div className={s.category__item__headerBlock}>
           <h2 className={s.category__item__header}>{title}</h2>
-          <p className={s.category__item__quantity}>3 items</p>
+          <p className={s.category__item__quantity}>0 items</p>
         </div>
+        <h1 className={s.temp}>IN PROGRESS..</h1>
       </div>
       <Footer />
     </div>

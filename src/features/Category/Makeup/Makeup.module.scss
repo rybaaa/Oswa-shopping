@@ -5,7 +5,6 @@
   .category__item__wrapper{
     width: 70%;
     margin: 20px auto;
-    border: 1px solid red;
     .category__item__headerBlock{
     display: flex;
       align-items: center;
@@ -21,6 +20,9 @@
       .category__item__quantity{
         @include text(20px, 400, 20px, #9797af);
       }
+    }
+    .temp{
+      font-size: 150px;
     }
   }
 }
