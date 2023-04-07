@@ -69,6 +69,24 @@ export const removeProductFromCartTC = createAsyncThunk(
   },
 )
 
+export const addProductToCartTC = createAsyncThunk(
+  'cart/addProductToCart',
+  async (param: { id: string; title: string }, { dispatch, rejectWithValue }) => {
+    dispatch(setSubmittingAC({ status: 'loading' }))
+    try {
+      const response = await cartApi.addProduct(param.id, param.title)
+      dispatch(setSubmittingAC({ status: 'success' }))
+      dispatch(getProductsInCartTC())
+
+      return response.data
+    } catch (e) {
+      const error = e as Error | AxiosError
+
+      return rejectWithValue(errorMessage(dispatch, error))
+    }
+  },
+)
+
 // export const {} = slice.actions
 
 export const productsInCartSelector = (state: RootStateType) => state.cart.products

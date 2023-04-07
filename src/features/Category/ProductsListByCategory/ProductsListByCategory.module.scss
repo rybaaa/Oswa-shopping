@@ -21,8 +21,10 @@
         @include text(20px, 400, 20px, #9797af);
       }
     }
-    .temp{
-      font-size: 150px;
+    .products__list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
   }
 }

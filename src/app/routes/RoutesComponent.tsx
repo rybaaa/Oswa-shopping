@@ -7,14 +7,14 @@ import { Cart } from 'features/cart/Cart'
 import { Payment } from 'components/Payment/Payment'
 import { Account } from 'components/Account/Account'
 import { Error404 } from '../Error404/Error404'
-import { Makeup } from '../../features/Category/Makeup/Makeup'
+import { ProductsListByCategory } from '../../features/Category/ProductsListByCategory/ProductsListByCategory'
 
 export const RoutesComponent = () => {
   return (
     <Routes>
       <Route path={PATH.MAIN} element={<Home />} />
       <Route path={PATH.CATEGORY} element={<Category />} />
-      <Route path={PATH.CATEGORY + '/:title'} element={<Makeup />} />
+      <Route path={PATH.CATEGORY + '/:title'} element={<ProductsListByCategory />} />
       <Route path={PATH.CART} element={<Cart />} />
       <Route path={PATH.PAYMENT} element={<Payment />} />
       <Route path={PATH.ACCOUNT} element={<Account />} />
