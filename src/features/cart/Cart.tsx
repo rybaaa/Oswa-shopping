@@ -23,6 +23,7 @@ export const Cart = () => {
   const productsList = products.map((el) => (
     <ProductsItemInCart
       key={el.id}
+      category={el.category}
       id={el.id}
       title={el.title}
       price={el.price}

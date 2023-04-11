@@ -1,13 +1,13 @@
 import { instance } from './instance'
 
 export const cartApi = {
-  getProducts() {
+  getProductsFromCart() {
     return instance.get<ProductsInCartResponseType[]>('cart')
   },
-  removeProduct(id: string) {
+  removeProductFromCart(id: string) {
     return instance.delete(`cart/${id}`)
   },
-  addProduct(id: string, title: string) {
+  addProductToCart(id: string, title: string) {
     return instance.post<ProductsInCartResponseType>('cart', { id, title })
   },
 }

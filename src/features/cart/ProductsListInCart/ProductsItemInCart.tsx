@@ -33,7 +33,7 @@ export const ProductsItemInCart = (props: ProductsItemInCartPropsType) => {
           </div>
         </div>
         <div className={s.product__info__select}>
-          <CustomSelect title={'Size'} items={props.sizes} />
+          {props.sizes && <CustomSelect title={'Size'} items={props.sizes} />}
           <CustomSelect title={'Quantity'} items={props.quantity} />
           {props.color && (
             <div className={s.product__info__color}>

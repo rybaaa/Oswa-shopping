@@ -37,7 +37,7 @@ export const getProductsInCartTC = createAsyncThunk(
   async (_, { dispatch, rejectWithValue }) => {
     dispatch(setSubmittingAC({ status: 'loading' }))
     try {
-      const response = await cartApi.getProducts()
+      const response = await cartApi.getProductsFromCart()
 
       dispatch(setSubmittingAC({ status: 'success' }))
 
@@ -55,7 +55,7 @@ export const removeProductFromCartTC = createAsyncThunk(
   async (id: string, { dispatch, rejectWithValue }) => {
     dispatch(setSubmittingAC({ status: 'loading' }))
     try {
-      const response = await cartApi.removeProduct(id)
+      const response = await cartApi.removeProductFromCart(id)
 
       dispatch(setSubmittingAC({ status: 'success' }))
       dispatch(getProductsInCartTC())
@@ -74,7 +74,7 @@ export const addProductToCartTC = createAsyncThunk(
   async (param: { id: string; title: string }, { dispatch, rejectWithValue }) => {
     dispatch(setSubmittingAC({ status: 'loading' }))
     try {
-      const response = await cartApi.addProduct(param.id, param.title)
+      const response = await cartApi.addProductToCart(param.id, param.title)
       dispatch(setSubmittingAC({ status: 'success' }))
       dispatch(getProductsInCartTC())
 
