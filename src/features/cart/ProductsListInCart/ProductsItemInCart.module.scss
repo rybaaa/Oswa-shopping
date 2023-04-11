@@ -35,6 +35,8 @@
     }
 
     img {
+      width: 200px;
+      height: 200px;
       @media screen and (max-width: 740px) {
         width: 150px;
         height: 150px;
@@ -60,6 +62,7 @@
       align-items: flex-start;
 
       .product__title {
+        max-width: 120px;
         margin: 0;
         @include text(20px, 900, 26px, $textColor1);
         font-family: 'Frank Ruhl Libre', sans-serif;
