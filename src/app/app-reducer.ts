@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootStateType } from './store'
 
 export type StatusType = 'idle' | 'loading' | 'success' | 'failed'
 
@@ -32,3 +33,5 @@ export type AppActionsType =
   | ReturnType<typeof setErrorAC>
   | ReturnType<typeof setSubmittingAC>
   | ReturnType<typeof setAppInitializedAC>
+
+export const statusSelector = (state: RootStateType) => state.app.status
