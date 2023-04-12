@@ -7,6 +7,9 @@
   justify-content: center;
   flex-wrap: wrap;
   gap:50px;
+  @media screen and (max-width: 1107px) {
+    display: none;
+  }
   .leftBlock{
     @include flex(column);
     @media screen and (max-width: 1107px) {
@@ -41,6 +44,11 @@
       .image{
         width: 176px;
         height: 176px;
+        cursor: pointer;
+        border-radius: 10px;
+        &:hover{
+          opacity: 0.8;
+        }
       }
     }
   }

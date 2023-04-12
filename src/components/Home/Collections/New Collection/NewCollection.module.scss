@@ -11,6 +11,7 @@
   }
   .item{
     position: relative;
+    cursor: pointer;
     &:hover{
       opacity: 0.8;
     }

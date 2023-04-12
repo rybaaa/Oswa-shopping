@@ -1,30 +1,41 @@
 @import "../../../common/styles/sass/mixins";
 @import "../../../common/styles/sass/variables";
 
-.container{
-  .category__item__wrapper{
+.container {
+  .category__item__wrapper {
     width: 70%;
     margin: 20px auto;
-    .category__item__headerBlock{
-    display: flex;
-      align-items: center;
-      gap:8px;
+    @media screen and (max-width: 802px) {
+      width: 100%;
+      padding: 0 10px;
+    }
 
-      .category__item__header{
+    .category__item__headerBlock {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .category__item__header {
         margin: 0;
         @include text(28px, 600, 36px, $textColor1);
-        &:first-letter{
+
+        &:first-letter {
           text-transform: capitalize;
         }
       }
-      .category__item__quantity{
+
+      .category__item__quantity {
         @include text(20px, 400, 20px, #9797af);
       }
     }
-    .products__list{
+
+    .products__list {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      @media screen and (max-width: 802px) {
+        justify-content: center;
+      }
     }
   }
 }

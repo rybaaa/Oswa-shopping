@@ -4,6 +4,7 @@
 .container {
   margin: 63px 0 40px 70px;
   @include flex(row);
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 50px;
   @media screen and (max-width: 1497px) {

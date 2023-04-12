@@ -64,7 +64,7 @@ export const Cart = () => {
               <span className={s.payment__title}>The total amount</span>
               <span className={s.payment__count}>{totalAmount}$</span>
             </div>
-            <button onClick={handleClick} className={s.payment__btn}>
+            <button disabled={!products.length} onClick={handleClick} className={s.payment__btn}>
               Checkout
             </button>
             <span className={s.payment__accept}>Accept</span>
