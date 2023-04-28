@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk'
 
 import { AppActionsType, appReducer } from './app-reducer'
 import { cartReducer } from '../features/cart/cart-reducer'
-import { categoryReducer } from '../features/Category/category-reducer'
+import { CategoriesActionsType, categoryReducer } from '../features/Category/category-reducer'
 import { productsReducer } from '../features/Category/ProductsListByCategory/products-reducer'
 
 export const rootReducer = combineReducers({
@@ -44,4 +44,4 @@ export type AsyncThunkConfig = {
   rejectedMeta?: unknown
 }
 
-export type ActionsType = AppActionsType
+export type ActionsType = AppActionsType | CategoriesActionsType

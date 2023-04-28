@@ -4,17 +4,19 @@
 .wrapper {
   background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
   position: relative;
-  .input{
+
+  .input {
     @include flex(row);
     justify-content: center;
     position: relative;
     width: 677px;
     height: 53px;
     margin: 0 auto;
-    @media screen and (max-width: 700px){
+    @media screen and (max-width: 700px) {
       width: 300px;
     }
-    .search{
+
+    .search {
       width: 100%;
       background: #EA85C7;
       border: none;
@@ -24,43 +26,57 @@
       outline: none;
       @include text(16px, 400, 24px, #767676);
     }
-    .zoom{
+
+    .zoom {
       position: absolute;
-      top:12px;
+      top: 12px;
       left: 37px;
     }
+
+    .dropdown_content {
+      position: absolute;
+      top: 110%;
+      z-index: 1;
+      width: 100%;
+      text-align: center;
+    }
   }
-  .mainBlock{
+
+  .mainBlock {
     margin: 50px auto 0;
     @include flex(row);
     justify-content: center;
-    gap:80px;
+    gap: 80px;
     flex-wrap: wrap;
-    .mainLeft{
-      @media screen and (max-width: 1205px){
+
+    .mainLeft {
+      @media screen and (max-width: 1205px) {
         @include flex(column);
         align-items: center;
         text-align: center;
       }
-      .title{
+
+      .title {
         width: 534px;
         @include text(48px, 400, 85px, $textColor2);
         font-family: 'Poller One', sans-serif;
-        @media screen and (max-width: 550px){
+        @media screen and (max-width: 550px) {
           width: 300px;
           @include text(40px, 400, 50px, $textColor2);
           font-family: 'Poller One', sans-serif;
         }
       }
-      .description{
+
+      .description {
         margin-top: 20px;
         width: 388px;
         @include text(16px, 400, 24px, $textColor2);
-        @media screen and (max-width: 550px){
+        @media screen and (max-width: 550px) {
           width: 300px;
         }
       }
-      .btn{
+
+      .btn {
         width: 275px;
         height: 63px;
         background: linear-gradient(180.52deg, #FA90D6 -9.05%, rgba(96, 26, 73, 0.83) 107.41%);
@@ -72,77 +88,101 @@
         margin-top: 65px;
         transition: width 1s;
         @include text(22px, 500, 24px, $textColor2);
-        &:hover{
+
+        &:hover {
           opacity: 0.8;
           width: 300px;
           scale: 1.1;
         }
-        &:active{
+
+        &:active {
           background-color: #FA90D6;
         }
       }
     }
-    .mainRight{
+
+    .mainRight {
       position: relative;
       padding-bottom: 110px;
-      img{
-        @media screen and (max-width: 620px){
+
+      img {
+        @media screen and (max-width: 620px) {
           width: 300px;
         }
       }
-      .effect{
+
+      .effect {
         position: absolute;
-        top:60px;
+        top: 60px;
         left: -48px;
-        @media screen and (max-width: 620px){
+        @media screen and (max-width: 620px) {
           display: none;
         }
       }
-      .effect2{
+
+      .effect2 {
         position: absolute;
-        top:-39px;
+        top: -39px;
         right: -24px;
-        @media screen and (max-width: 620px){
+        @media screen and (max-width: 620px) {
           display: none;
         }
       }
-      .effect3{
+
+      .effect3 {
         position: absolute;
-        top:366px;
+        top: 366px;
         left: -85px;
-        @media screen and (max-width: 620px){
+        @media screen and (max-width: 620px) {
           display: none;
         }
       }
-      .effect4{
+
+      .effect4 {
         position: absolute;
-        bottom:73px;
+        bottom: 73px;
         right: 0;
-        @media screen and (max-width: 620px){
+        @media screen and (max-width: 620px) {
           display: none;
         }
       }
     }
   }
-  .leftEffects{
+
+  .leftEffects {
     position: absolute;
-    top:148px;
-    @media screen and (max-width: 1450px){
+    top: 148px;
+    @media screen and (max-width: 1450px) {
       display: none;
     }
   }
-  .rightEffects{
+
+  .rightEffects {
     position: absolute;
-    top:490px;
+    top: 490px;
     right: 0;
-    @media screen and (max-width: 1205px){
+    @media screen and (max-width: 1205px) {
       display: none;
     }
   }
-  .curlyLine{
+
+  .curlyLine {
     position: absolute;
     bottom: 30px;
     left: calc(50% - 500px);
     right: 0;
   }
+}
+
+.dropdown_item {
+  height: 30px;
+  background: #EA85C7;
+  border: none;
+  border-radius: 16px 0;
+  box-shadow: inset 4px 4px 4px #BB699E, inset -4px -4px 4px rgba(255, 255, 255, 0.25);
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @include text(22px, 700, 28px, $textColor2);
 }

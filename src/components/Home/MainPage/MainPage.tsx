@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import s from './MainPage.module.scss'
 import zoom from 'assets/zoom.svg'
 import pic from 'assets/pic.svg'
@@ -12,12 +12,46 @@ import { Header } from '../../../app/Header/Header'
 import Fade from 'react-reveal/Fade'
 import { useNavigate } from 'react-router-dom'
 import { PATH } from 'app/routes/routes'
+import { useAppDispatch, useAppSelector } from '../../../app/store'
+import { isSearchFieldActiveSelector, setSearchFieldActiveAC } from '../../../app/app-reducer'
+import {
+  changeSearchFieldAC,
+  clearFoundCategoriesAC,
+  foundCategoriesSelector,
+  searchForCategoriesTC,
+  searchSelector,
+} from '../../../features/Category/category-reducer'
 
 export const MainPage = () => {
+  const isSearchFieldActive = useAppSelector(isSearchFieldActiveSelector)
+  const search = useAppSelector(searchSelector)
+  const foundCategories = useAppSelector(foundCategoriesSelector)
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
   const goToCategories = () => {
     navigate(PATH.CATEGORY)
   }
+  const setSearchFieldActive = () => {
+    dispatch(setSearchFieldActiveAC({ isActive: true }))
+  }
+  const setSearchFieldInactive = () => {
+    dispatch(setSearchFieldActiveAC({ isActive: false }))
+  }
+  const changeInputSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(searchForCategoriesTC(e.currentTarget.value))
+  }
+  const goToCategory = (title: string) => {
+    navigate(`/category/${title}`)
+    dispatch(changeSearchFieldAC({ title: '' }))
+    dispatch(clearFoundCategoriesAC())
+  }
+
+  const dropdownItems = foundCategories.map((el, index) => (
+    <div onMouseDown={() => goToCategory(el)} className={s.dropdown_item} key={index}>
+      {el}
+    </div>
+  ))
   return (
     <div className={s.wrapper}>
       <Header />
@@ -31,7 +65,16 @@ export const MainPage = () => {
         <img src={rightGroup} alt={'right effects'} />
       </div>
       <form className={s.input}>
-        <input className={s.search} type={'text'} placeholder={'Search what you need'}></input>
+        <input
+          value={search}
+          onChange={changeInputSearch}
+          onClick={setSearchFieldActive}
+          onBlur={setSearchFieldInactive}
+          className={s.search}
+          type={'text'}
+          placeholder={'Search what you need'}
+        ></input>
+        {isSearchFieldActive && <div className={s.dropdown_content}>{dropdownItems}</div>}
         <img className={s.zoom} src={zoom} alt={'zoom'} />
       </form>
       <div className={s.mainBlock}>

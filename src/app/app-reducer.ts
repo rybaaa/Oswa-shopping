@@ -7,6 +7,7 @@ const initialState = {
   error: null as string | null,
   status: 'idle' as StatusType,
   isInitialized: false as boolean,
+  isSearchFieldActive: false,
 }
 
 const slice = createSlice({
@@ -22,16 +23,22 @@ const slice = createSlice({
     setAppInitializedAC(state, action: PayloadAction<{ isInitialized: boolean }>) {
       state.isInitialized = action.payload.isInitialized
     },
+    setSearchFieldActiveAC(state, action: PayloadAction<{ isActive: boolean }>) {
+      state.isSearchFieldActive = action.payload.isActive
+    },
   },
 })
 
 export const appReducer = slice.reducer
 
-export const { setErrorAC, setSubmittingAC, setAppInitializedAC } = slice.actions
+export const { setErrorAC, setSubmittingAC, setAppInitializedAC, setSearchFieldActiveAC } =
+  slice.actions
 
 export type AppActionsType =
   | ReturnType<typeof setErrorAC>
   | ReturnType<typeof setSubmittingAC>
   | ReturnType<typeof setAppInitializedAC>
+  | ReturnType<typeof setSearchFieldActiveAC>
 
 export const statusSelector = (state: RootStateType) => state.app.status
+export const isSearchFieldActiveSelector = (state: RootStateType) => state.app.isSearchFieldActive
