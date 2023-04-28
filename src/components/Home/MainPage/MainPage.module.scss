@@ -185,4 +185,7 @@
   align-items: center;
   cursor: pointer;
   @include text(22px, 700, 28px, $textColor2);
+  &:hover{
+    opacity: .8;
+  }
 }

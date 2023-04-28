@@ -39,7 +39,12 @@ export const MainPage = () => {
     dispatch(setSearchFieldActiveAC({ isActive: false }))
   }
   const changeInputSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(searchForCategoriesTC(e.currentTarget.value))
+    if (e.currentTarget.value) {
+      dispatch(searchForCategoriesTC(e.currentTarget.value))
+    } else {
+      dispatch(changeSearchFieldAC({ title: '' }))
+      dispatch(clearFoundCategoriesAC())
+    }
   }
   const goToCategory = (title: string) => {
     navigate(`/category/${title}`)
